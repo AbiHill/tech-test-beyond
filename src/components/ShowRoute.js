@@ -1,9 +1,44 @@
 import React from 'react';
+import axios from 'axios';
 
-const ShowRoute = () => {
-  return(
-    <h1>ShowRoute</h1>
-  );
-};
+class ShowRoute extends React.Component {
+
+  state =  {
+    video: {
+      snippet: {}
+    }
+
+  }
+
+
+  componentWillMount() {
+    this.getVideo();
+  }
+
+  getVideo () {
+    axios.get('https://www.googleapis.com/youtube/v3/videos', {
+      params: { 'id': this.props.match.params.id,
+        'part': 'snippet',
+        'key': 'AIzaSyCuv_16onZRx3qHDStC-FUp__A6si-fStw'
+      }
+    })
+      .then(res => {
+        this.setState({ video: res.data.items[0]}, () => console.log('get video', this.state.video));
+      });
+  }
+
+  render() {
+    console.log('render', this.state);
+    return (
+      <section>
+        <h1>{this.state.video.snippet.title}</h1>
+        <p>{this.state.video.snippet.description}</p>
+        <iframe id="ytplayer" type="text/html" width="640" height="360"
+          src={`https://www.youtube.com/embed/${this.state.video.id}`}
+          frameBorder="0"></iframe>
+      </section>
+    );
+  }
+}
 
 export default ShowRoute;
