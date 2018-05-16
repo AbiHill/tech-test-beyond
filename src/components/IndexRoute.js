@@ -15,11 +15,15 @@ class IndexRoute extends React.Component {
 
   getVideos() {
     axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,status&maxResults=10&playlistId=PLSi28iDfECJPJYFA4wjlF5KUucFvc0qbQ&key=AIzaSyCuv_16onZRx3qHDStC-FUp__A6si-fStw')
-      .then(res => this.setState({ videos: res.data}, () => console.log('get videos', this.state.videos.items)));
+      .then(res => {
+        this.setState({ videos: res.data}, () => console.log('get videos', this.state.videos.items));
+        console.log(this.state.videos.items[0].snippet.thumbnails.high.url);
+
+      });
   }
 
   render() {
-    console.log('render', this.state.videos.items);
+    // console.log('render', this.state.videos.items[0].snippet.thumbnails.high.url);
     return (
       <div>
         <ul>
@@ -27,7 +31,7 @@ class IndexRoute extends React.Component {
             <li key={i}>
               <div>
                 <div>
-                  <h3>{video.kind}</h3>
+                  { video.snippet.thumbnails && <img src={`${video.snippet.thumbnails.medium.url}`} />}
                 </div>
               </div>
             </li>
