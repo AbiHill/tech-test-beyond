@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// Routes
 import IndexRoute from './components/IndexRoute';
 import ShowRoute from './components/ShowRoute';
+
+// style sheet
+import './scss/style.scss';
 
 class App extends React.Component {
 

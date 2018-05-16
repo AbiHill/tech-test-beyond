@@ -25,19 +25,24 @@ class IndexRoute extends React.Component {
   render() {
     // console.log('render', this.state.videos.items[0].snippet.thumbnails.high.url);
     return (
-      <div>
-        <ul>
-          {this.state.videos.items.map((video, i) =>
-            <li key={i}>
-              <Link to={`/${video.snippet.resourceId.videoId}`}>
-                { video.snippet.thumbnails && <img src={`${video.snippet.thumbnails.medium.url}`} />}
-                <h3>{ video.snippet.title }</h3>
-                <p>{ video.snippet.description }</p>
-              </Link>
-            </li>
-          )}
-        </ul>
-      </div>
+      <section>
+        <div className="top-nav">
+          <img src="././assets/images/MusicPlay_logo.png" alt="logo" />
+        </div>
+        <div>
+          <div>
+            {this.state.videos.items.map((video, i) =>
+              <div key={i}>
+                <Link to={`/${video.snippet.resourceId.videoId}`}>
+                  { video.snippet.thumbnails && <img src={`${video.snippet.thumbnails.medium.url}`} />}
+                  <h3>{ video.snippet.title }</h3>
+                  <p>{ video.snippet.description }</p>
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
     );
   }
 }
