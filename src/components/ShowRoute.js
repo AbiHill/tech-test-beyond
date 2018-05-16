@@ -31,11 +31,18 @@ class ShowRoute extends React.Component {
     console.log('render', this.state);
     return (
       <section>
-        <h1>{this.state.video.snippet.title}</h1>
-        <p>{this.state.video.snippet.description}</p>
-        <iframe id="ytplayer" type="text/html" width="640" height="360"
-          src={`https://www.youtube.com/embed/${this.state.video.id}`}
-          frameBorder="0"></iframe>
+        <div className="show-video-wrapper">
+          <div className="description-box-right">
+            <iframe id="ytplayer" type="text/html" width="640" height="360"
+              src={`https://www.youtube.com/embed/${this.state.video.id}`}
+              frameBorder="0">
+            </iframe>
+          </div>
+          <div className="large-video">
+            <h1>{this.state.video.snippet.title}</h1>
+            <p>{this.state.video.snippet.description}</p>
+          </div>
+        </div>
       </section>
     );
   }

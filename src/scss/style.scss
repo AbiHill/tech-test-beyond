@@ -1,8 +1,101 @@
+@font-face {
+    font-family: 'Alfa_Slab_One'; /*a name to be used later*/
+    src: url('/assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Roboto'; /*a name to be used later*/
+    src: url('/assets/fonts/Roboto/Roboto-Thin.ttf'); /*URL to font*/
+}
+
 body {
   background-image: url("/assets/images/main_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  margin: 0;
+  background-color: #494848;
 
 }
 
 .top-nav {
   background-image: url("/assets/images/header_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vw;
+  height: 50px;
+}
+
+.logo {
+  width: 200px;
+  margin-top: -12px;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+
+}
+
+.video-box {
+  width: 300px;
+  height: 500px;
+  padding: 15px;
+
+  img {
+    width: 100%;
+  }
+
+  h3 {
+    color: white;
+    margin-top: -68px;
+    height: 64px;
+    position: relative;
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Alfa_Slab_One';
+    color: #50e3c2;
+    padding: 5px;
+    font-weight: 100;
+  }
+
+  p {
+    font-family: 'Roboto';
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.show-video-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.large-video {
+  padding: 10px;
+
+  p {
+    color: white;
+    font-family: 'Roboto';
+  }
+  h1 {
+    color: white;
+    font-family: 'Alfa_Slab_One';
+    font-weight: 100;
+  }
+}
+
+.description-box-right {
+
+  padding: 10px;
 }
