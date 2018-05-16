@@ -36,7 +36,7 @@ class ShowRoute extends React.Component {
         <img className="logo" src="././assets/images/MusicPlay_logo.png" alt="logo" />
         <div className="show-video-wrapper">
           <div className="description-box-right">
-            <iframe id="ytplayer" type="text/html" width="640" height="360"
+            <iframe className="large-youtube-video" id="ytplayer" type="text/html"
               src={`https://www.youtube.com/embed/${this.state.video.id}`}
               frameBorder="0">
             </iframe>

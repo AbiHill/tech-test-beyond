@@ -33,7 +33,15 @@ class IndexRoute extends React.Component {
             {this.state.videos.items.map((video, i) =>
               <div className="video-box" key={i}>
                 <Link to={`/${video.snippet.resourceId.videoId}`}>
-                  { video.snippet.thumbnails && <img className="logo" src={`${video.snippet.thumbnails.high.url}`} />}
+
+
+                  <iframe id="ytplayer" type="text/html"
+                    src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`}
+                    frameBorder="0">
+                  </iframe>
+
+
+                  {/* { video.snippet.thumbnails && <img className="logo" src={`${video.snippet.thumbnails.high.url}`} />} */}
                   <div className="video-titles">
                     <h3>{ video.snippet.title }</h3>
                     <img className="play-button" src="././assets/images/play_button.png" alt="play button" />

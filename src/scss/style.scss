@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'Roboto'; /*a name to be used later*/
-    src: url('/assets/fonts/Roboto/Roboto-Thin.ttf'); /*URL to font*/
+    src: url('/assets/fonts/Roboto/Roboto-Regular.ttf'); /*URL to font*/
 }
 
 body {
@@ -45,7 +45,7 @@ body {
 
 .video-box {
   width: 300px;
-  height: 500px;
+  height: 425px;
   padding: 15px;
 
   img {
@@ -63,11 +63,12 @@ body {
 
     h3 {
     font-weight: 100;
-    font-family: 'Alfa_Slab_One';
+    font-family: 'Alfa_Slab_One', Arial, Helvetica, sans-serif;;
     color: #50e3c2;
     padding: 5px;
-    font-size: 14px;
+    font-size: 13px;
     float: left;
+    display:inline;
 
     }
 
@@ -81,7 +82,7 @@ body {
   }
 
   p {
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;;
     padding: 5px;
     font-size: 12px;
   }
@@ -96,20 +97,22 @@ body {
   width: 80%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
 
 .large-video {
   padding: 10px;
+  max-width: 330px;
 
   p {
     color: white;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;;
     font-size: 12px;
   }
   h1 {
     color: white;
-    font-family: 'Alfa_Slab_One';
+    font-family: 'Alfa_Slab_One', Arial, Helvetica, sans-serif;;
     font-weight: 100;
     color: #50e3c2;
   }
@@ -117,14 +120,65 @@ body {
 
 
 
+
+
 .back-link {
   text-decoration: none;
   color: white;
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;;
   color: #50e3c2;
 }
 
 .description-box-right {
-
   padding: 10px;
+}
+
+.large-youtube-video {
+  width: 640px;
+  height: 360px;
+}
+
+@media screen and (max-width : 680px) {
+
+  .large-youtube-video {
+    width: 600px;
+    height: 338px;
+  }
+
+}
+
+@media screen and (max-width : 650px) {
+
+  .large-youtube-video {
+    width: 550px;
+    height: 309px;
+  }
+
+}
+
+@media screen and (max-width : 600px) {
+
+  .large-youtube-video {
+    width: 500px;
+    height: 281px;
+  }
+
+}
+
+@media screen and (max-width : 525px) {
+
+  .large-youtube-video {
+    width: 450px;
+    height: 253px;
+  }
+
+}
+
+@media screen and (max-width : 475px) {
+
+  .large-youtube-video {
+    width: 400px;
+    height: 225px;
+  }
+
 }
