@@ -34,7 +34,10 @@ class IndexRoute extends React.Component {
               <div className="video-box" key={i}>
                 <Link to={`/${video.snippet.resourceId.videoId}`}>
                   { video.snippet.thumbnails && <img className="logo" src={`${video.snippet.thumbnails.high.url}`} />}
-                  <h3>{ video.snippet.title }</h3>
+                  <div className="video-titles">
+                    <h3>{ video.snippet.title }</h3>
+                    <img className="play-button" src="././assets/images/play_button.png" alt="play button" />
+                  </div>
                   <p>{ video.snippet.description }</p>
                 </Link>
               </div>
