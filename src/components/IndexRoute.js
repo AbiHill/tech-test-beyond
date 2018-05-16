@@ -29,11 +29,9 @@ class IndexRoute extends React.Component {
         <ul>
           {this.state.videos.items.map((video, i) =>
             <li key={i}>
-              <div>
-                <div>
-                  { video.snippet.thumbnails && <img src={`${video.snippet.thumbnails.medium.url}`} />}
-                </div>
-              </div>
+              { video.snippet.thumbnails && <img src={`${video.snippet.thumbnails.medium.url}`} />}
+              <h3>{ video.snippet.title }</h3>
+              <p>{ video.snippet.description }</p>
             </li>
           )}
         </ul>
